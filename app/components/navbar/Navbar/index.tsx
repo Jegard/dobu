@@ -1,7 +1,7 @@
 import { Form, Link } from "@remix-run/react";
 import { useState } from "react";
 import { Menu, X } from "react-feather";
-// import logo from "~/assets/svg/dobu-logo.svg";
+import logo from '~/assets/jpg/logodobu.svg'
 import { useOptionalUser } from "~/utils";
 import NavbarLink from "./NavbarLink";
 import ShareButtons from "./ShareButtons";
@@ -14,12 +14,14 @@ const Navbar = () => {
     <header className="bg-red-900 relative">
       <div className="md:flex md:justify-between">
         <div className="flex items-center justify-between px-4 py-3">
-          <div className="flex items-center justify-center">
-            <img
-              className="h-16 w-auto"
-              src='https://static.wikia.nocookie.net/vsbattles/images/7/7f/New_616_Spidey_render.png/revision/latest/scale-to-width-down/340?cb=20220522210527'
-              alt="Dobu Martial Arts Gym"
-            />
+          <div className="flex items-center justify-center flex-wrap-reverse">
+         
+          <img
+                className="h-20 w-auto"
+                src= {logo}
+                alt="dobu-logo"
+              />
+            
             {user ? (
               <span className="text-white ml-4 text-xs">
                 Hi {user.email}!
@@ -35,8 +37,8 @@ const Navbar = () => {
           } md:flex md:items-center`}
         >
           <NavbarLink url="/">Home</NavbarLink>
-          <NavbarLink url="/instructors">Instructors</NavbarLink>
-          <NavbarLink url="/memberships">Memberships</NavbarLink>
+          <NavbarLink url="/Instructors">Instructors</NavbarLink>
+          <NavbarLink url="/Membership">Memberships</NavbarLink>
 
           <ShareButtons />
 

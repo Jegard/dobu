@@ -1,5 +1,6 @@
 import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
+import { ParallaxProvider } from "react-scroll-parallax";
 import {
   Links,
   LiveReload,
@@ -37,11 +38,15 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
-        <Navbar />
+      <ParallaxProvider>  
+      <Navbar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+      </ParallaxProvider>
+        
+
       </body>
     </html>
   );
