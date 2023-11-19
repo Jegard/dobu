@@ -27,19 +27,7 @@ const Navbar = () => {
             ) : null}
           </div>
 
-          <div className="md:hidden">
-            <button
-              className="text-red-500 block hover:text-white focus:text-white focus:outline-none"
-              type="button"
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              {isOpen ? (
-                <X className="h-6 w-6 fill-current" />
-              ) : (
-                <Menu className="h-6 w-6 fill-current" />
-              )}
-            </button>
-          </div>
+          
         </div>
         <div
           className={`px-2 pb-4 pt-2 ${
