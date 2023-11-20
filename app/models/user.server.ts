@@ -1,5 +1,6 @@
-import type { Password, User } from "@prisma/client";
+import type { Memberships, Password, User } from "@prisma/client";
 import bcrypt from "bcryptjs";
+import { M } from "vitest/dist/global-58e8e951";
 
 import { prisma } from "~/db.server";
 
@@ -24,6 +25,20 @@ export async function createUser(email: User["email"], password: string) {
           hash: hashedPassword,
         },
       },
+    },
+  });
+}
+
+export async function updateUserMembership(
+  id: User["id"],
+  membershipId: Memberships["id"]
+) {
+  return await prisma.user.update({
+    where: {
+      id,
+    },
+    data: {
+      membershipId,
     },
   });
 }
